@@ -1,4 +1,4 @@
-
+OG Enterprise Ltd — Sales Team Leaderboard & Data Analytics Pipeline
 ---
 An end-to-end data analytics project demonstrating raw data transformation, database engineering, and interactive dashboard design. This project takes messy, unstructured retail transaction logs through a strict MySQL pipeline and transforms them into an internal sales team leaderboard to track peer performance.
 
