@@ -25,7 +25,7 @@ The project is split into two clear layers:
 
 ### Key Individual KPIs Tracked:
 *   **Total Revenue Contributed:** Gross sales amounts generated per representative. (e.g., Chioma and Mary leading the floor at \$5.29M each).
-*   **Average Order Value:** 
+*   **Average Order Value:** The average revenue generated per closed transaction
 *   **Daily Transaction Velocity:** The average number of client transactions a rep processes per day (ranging from 5.5 to 5.8).
 *   **Customer Satisfaction Score:** The average rating (out of 5) given by customers to that specific sales representative.
 
