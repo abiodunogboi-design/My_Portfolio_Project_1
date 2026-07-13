@@ -101,6 +101,6 @@ RENAME TABLE my_portfolio_project_1_clean TO my_portfolio_project_1_staging;
 ## 📈 Internal Team Insights
 1. **Top-Tier Sales Competition:** The team leaderboard shows an incredibly tight race for the top spot on the sales floor. The leading representatives, Chioma and Mary, are neck-and-neck, with their gross revenue figures separated by less than \$10,000.
 2. **Consistent Operational Pace:** Operational output is remarkably uniform across the entire roster. Representatives maintain a highly consistent daily workflow, averaging between **5.5 and 5.8 closed sales per day**.
-3. **Widespread Satisfaction Bottleneck:** While sales volumes and revenue are high across the board, individual customer satisfaction ratings are low, hovering between **2.46 and 2.54 out of 5** for all reps. Because this drop is consistent across the entire team, it indicates that individual reps are likely battling wider company constraints—such as delivery delays or product stock issues—rather than personal performance problems.
+3. **Widespread Satisfaction Bottleneck:** While sales volumes and revenue are high across the board, individual customer satisfaction ratings are low, hovering between **2.46 and 2.54 out of 5** for all reps. Because this drop is consistent across the entire team, it indicates that individual reps are likely battling wider company constraints such as delivery delays or product stock issues rather than personal performance problems.
 
 ---
