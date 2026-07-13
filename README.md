@@ -45,10 +45,20 @@ The raw dataset was intentionally ingested completely as unstructured `VARCHAR` 
 Raw ingestion table creation and preliminary field profiling to isolate text anomalies, case styling errors, and formatting inconsistencies:
 ```sql
 CREATE TABLE my_portfolio_project_1(
-    order_id VARCHAR(50), customer_name VARCHAR(50), email VARCHAR(50), city VARCHAR(50),
-    product_category VARCHAR(50), order_date VARCHAR(50), quantity VARCHAR(50),
-    unit_price VARCHAR(50), discount_pct VARCHAR(50), revenue VARCHAR(50),
-    customer_age VARCHAR(50), customer_rating VARCHAR(50), sales_rep VARCHAR(50), payment_method VARCHAR(50)
+    order_id VARCHAR(50),
+     customer_name VARCHAR(50),
+    email VARCHAR(50),
+    city VARCHAR(50),
+    product_category VARCHAR(50),
+    order_date VARCHAR(50),
+    quantity VARCHAR(50),
+    unit_price VARCHAR(50),
+    discount_pct VARCHAR(50),
+    revenue VARCHAR(50),
+    customer_age VARCHAR(50),
+    customer_rating VARCHAR(50),
+    sales_rep VARCHAR(50),
+    payment_method VARCHAR(50)
 );
 ```
 
