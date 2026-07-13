@@ -104,6 +104,3 @@ RENAME TABLE my_portfolio_project_1_clean TO my_portfolio_project_1_staging;
 3. **Widespread Satisfaction Bottleneck:** While sales volumes and revenue are high across the board, individual customer satisfaction ratings are low, hovering between **2.46 and 2.54 out of 5** for all reps. Because this drop is consistent across the entire team, it indicates that individual reps are likely battling wider company constraints—such as delivery delays or product stock issues—rather than personal performance problems.
 
 ---
-
-## 🚀 How to Run this Project Locally
-1. **Clone the repository:**
