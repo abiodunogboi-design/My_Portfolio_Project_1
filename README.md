@@ -9,3 +9,7 @@ An end-to-end data analytics project demonstrating raw data transformation, data
 
 ## Project Overview
 **OG Enterprise Ltd** is a multi-category retailer selling Electronics, Furniture, Food, and Fashion items across major regional hubs like Lagos and Abuja. This project addresses a common operational problem: converting inconsistent, raw transactional text data into a production-grade database to power an internal sales tool.
+
+The project is split into two clear layers:
+1. **Data Engineering Layer (MySQL):** A 7-phase data cleaning architecture that stages, standardizes, casts, and deduplicates raw records.
+2. **Business Intelligence Layer (Tableau):** An internal peer-tracking leaderboard designed for team members and managers to view individual sales records, daily velocity, and customer ratings side-by-side.
