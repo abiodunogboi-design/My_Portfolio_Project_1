@@ -46,7 +46,7 @@ Raw ingestion table creation and preliminary field profiling to isolate text ano
 ```sql
 CREATE TABLE my_portfolio_project_1(
     order_id VARCHAR(50),
-     customer_name VARCHAR(50),
+    customer_name VARCHAR(50),
     email VARCHAR(50),
     city VARCHAR(50),
     product_category VARCHAR(50),
