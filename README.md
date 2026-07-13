@@ -4,21 +4,22 @@ Project Overview
 OG Enterprise Ltd is a multi-category retailer selling Electronics, Furniture, Food, and Fashion items across major regional hubs (Lagos, Abuja, etc.). This project addresses a common business problem: converting inconsistent, raw transactional data into clean, production-grade databases to drive executive sales performance strategies.The project is split into two primary layers:Data Engineering Layer (MySQL): A 7-phase data architecture staging, cleaning, standardizing, casting, and deduplicating raw records.Business Intelligence Layer (Tableau): A sleek executive leaderboard tracking high-level KPIs, staff performance, and customer satisfaction metrics.📊 Executive Dashboard PreviewFigure 1.1: OG Enterprise Ltd Sales Leaderboard UI showcasing core business health metrics.Key High-Level Visualized KPIs:Total Revenue Generated: $31,027,595Total Transaction Volumes: 12,316 RecordsTotal Units Displaced: 44,124 Quantities SoldTop Performing Representatives: Chioma ($5.29M) and Mary ($5.29M) leading the organization's baseline.🛠️ Tech Stack UsedDatabase Engine: MySQL ServerBI Tooling: Tableau Public / Tableau DesktopDocumentation & Version Control: Markdown / Git & GitHub💾 Database Architecture & Data Cleaning PipelineThe raw dataset was intentionally ingested completely as unstructured VARCHAR definitions to prevent data loss, character truncation, or unexpected format rejections during early staging.Below is the structured 7-phase pipeline executed inside MySQL to engineer the final analytics-ready layer:Phase 1 & 2: Environment Setup & ProfilingRaw ingestion structure setup and preliminary field profiling to isolate text anomalies, case styling errors, and formatting inconsistencies:
 
 CREATE TABLE my_portfolio_project_1(
-    order_id VARCHAR(50),
-    customer_name VARCHAR(50),
-    email VARCHAR(50),
-    city VARCHAR(50),
-    product_category VARCHAR(50),
-    order_date VARCHAR(50),
-    quantity VARCHAR(50),
-    unit_price VARCHAR(50),
-    discount_pct VARCHAR(50),
-    revenue VARCHAR(50),
-    customer_age VARCHAR(50),
-    customer_rating VARCHAR(50), 
-    sales_rep VARCHAR(50), 
-    payment_method VARCHAR(50)
+order_id VARCHAR(50),
+customer_name VARCHAR(50),
+email VARCHAR(50),
+city VARCHAR(50),
+product_category VARCHAR(50),
+order_date VARCHAR(50),
+quantity VARCHAR(50),
+unit_price VARCHAR(50),
+discount_pct VARCHAR(50),
+revenue VARCHAR(50),
+customer_age VARCHAR(50),
+customer_rating VARCHAR(50), 
+sales_rep VARCHAR(50), 
+payment_method VARCHAR(50)
 );
+
 .Phase 3 & 4: Staging Isolation & Text StandardizationCreated an isolated staging space to protect raw data integrity. Handled empty strings (''), standardized regional casing errors (e.g., transforming LAGOS and ABUJA entries into clean proper casing), and handled null items safely:sql-- Standardizing text fields and handling blanks
 UPDATE my_portfolio_project_1_staging SET city = 'Unknown location' WHERE city = '';
 UPDATE my_portfolio_project_1_staging SET city = 'Lagos' WHERE city = 'LAGOS';
