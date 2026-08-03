@@ -42,7 +42,7 @@ The project is split into two clear layers:
 ---
 
 ## 💾 Database Architecture & Data Cleaning Pipeline
-**The raw dataset was intentionally ingested completely as unstructured `VARCHAR` definitions to prevent data loss or character truncation during early staging**. Below is the structured 7-phase pipeline executed inside MySQL to engineer the final analytics-ready layer:
+**The raw dataset was intentionally ingested completely as unstructured `VARCHAR` definitions to prevent data loss or character truncation during early staging**. Below is the structured 6-phase pipeline executed inside MySQL to engineer the final analytics-ready layer:
 
 ### Phase 1 & 2: Environment Setup & Profiling
 Raw ingestion table creation and preliminary field profiling to isolate text anomalies, case styling errors, and formatting inconsistencies:
@@ -86,21 +86,7 @@ UPDATE my_portfolio_project_1_staging SET revenue = CAST(NULLIF(TRIM(revenue), '
 ALTER TABLE my_portfolio_project_1_staging MODIFY revenue DECIMAL(10,2);
 ```
 
-### Phase 6: Feature Engineering & Enrichment
-Derived descriptive columns to enhance analysis, such as categorizing quantitative feedback scores into descriptive performance buckets, and engineered an `updated_quantity` field to validate transaction revenue accuracy:
-```sql
--- Creating descriptive business classifications
-ALTER TABLE my_portfolio_project_1_staging ADD COLUMN rating_grade VARCHAR(20);
-UPDATE my_portfolio_project_1_staging SET rating_grade = CASE 
-    WHEN customer_rating = 5 THEN 'Excellent'
-    WHEN customer_rating = 4 THEN 'Good'
-    WHEN customer_rating = 3 THEN 'Average'
-    WHEN customer_rating = 2 THEN 'Fair'
-    WHEN customer_rating = 1 THEN 'Poor'
-    ELSE 'No Rating' END;
-```
-
-### Phase 7: Deduplication & Final Schema Commit
+### Phase 6: Deduplication & Final Schema Commit
 Identified exact-match redundant duplicates through windowed partitioning (`ROW_NUMBER()`), committed clean records into a production-grade destination, and optimized database performance:
 ```sql
 CREATE TABLE my_portfolio_project_1_clean LIKE my_portfolio_project_1_staging;
