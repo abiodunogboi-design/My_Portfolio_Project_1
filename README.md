@@ -89,7 +89,7 @@ ALTER TABLE my_portfolio_project_1_staging MODIFY revenue DECIMAL(10,2);
 This phase standardizes incomplete data by handling blank fields for sales reps and payment methods to preserve categorical integrity. It also engineers an updated_quantity feature using a reverse-calculated revenue formula to systematically reconstruct and validate order volumes.
 ```sql
 UPDATE my_portfolio_project_1_staging
-	SET updated_quantity =  ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3); 
+	SET Quantity =  ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3); 
 
 SELECT DISTINCT(payment_method) FROM my_portfolio_project_1_staging; 
 UPDATE my_portfolio_project_1_staging SET payment_method = 'Unspecified' WHERE payment_method = '';
