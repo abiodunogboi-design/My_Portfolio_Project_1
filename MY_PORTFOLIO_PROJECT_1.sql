@@ -191,15 +191,13 @@ SELECT
 	quantity, 
 	revenue, ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3) AS quantity_updated
 FROM my_portfolio_project_1_staging;
-
-ALTER TABLE my_portfolio_project_1_staging
-	ADD updated_quantity DECIMAL(10,2);
     
 UPDATE my_portfolio_project_1_staging
-	SET updated_quantity =  ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3);
+	SET Quantity =  ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3)
+    WHERE Quantity IS NULL;
 
 SELECT COUNT(updated_quantity) FROM my_portfolio_project_1_staging 
-	WHERE updated_quantity IS NULL;
+	WHERE Quantity IS NULL;
     
 -------------------------------------------------------------------------------
 -- PHASE 7: DEDUPLICATION & FINAL TABLE COMMIT
