@@ -62,7 +62,7 @@ CREATE TABLE my_portfolio_project_1(
     customer_rating VARCHAR(50),
     sales_rep VARCHAR(50),
     payment_method VARCHAR(50)
-);
+); --Varchar was intentioneally used to prevent data loss or character truncation
 ```
 
 ### Phase 3 & 4: Staging Isolation & Text Standardization
