@@ -175,30 +175,6 @@ ALTER TABLE my_portfolio_project_1_staging
 -- PHASE 6: DATA ENRICHMENT & FEATURE ENGINEERING
 -------------------------------------------------------------------------------
 -- Deriving descriptive columns and validating quantitative attributes to add business context.
-SELECT customer_rating, 
-CASE
-	WHEN customer_rating = 5 THEN 'Excellent'
-	WHEN customer_rating = 4 THEN 'Good'
-	WHEN customer_rating = 3 THEN 'Average'
-	WHEN customer_rating = 1 THEN 'Poor'
-	ELSE 'No Rating' 
-END
-AS rating_grade FROM my_portfolio_project_1_staging;
-
-ALTER TABLE my_portfolio_project_1_staging
-	ADD COLUMN rating_grade VARCHAR(20);
-    
-UPDATE my_portfolio_project_1_staging 
-SET rating_grade = 
-CASE
-	WHEN customer_rating = 5 THEN 'Excellent'
-	WHEN customer_rating = 4 THEN 'Good'
-	WHEN customer_rating = 3 THEN 'Average'
-	WHEN customer_rating = 2 THEN 'Fair'
-	WHEN customer_rating = 1 THEN 'Poor'
-	ELSE 'No Rating' 
-END;
-
 SELECT DISTINCT(sales_rep) FROM my_portfolio_project_1_staging;
 
 UPDATE my_portfolio_project_1_staging
