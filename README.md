@@ -85,8 +85,8 @@ ALTER TABLE my_portfolio_project_1_staging MODIFY COLUMN order_date DATE;
 UPDATE my_portfolio_project_1_staging SET revenue = CAST(NULLIF(TRIM(revenue), '') AS DECIMAL(10,2));
 ALTER TABLE my_portfolio_project_1_staging MODIFY revenue DECIMAL(10,2);
 ```
-
 ### Phase 6: Deduplication & Final Schema Commit
+### Phase 7: Deduplication & Final Schema Commit
 Identified exact-match redundant duplicates through windowed partitioning (`ROW_NUMBER()`), committed clean records into a production-grade destination, and optimized database performance:
 ```sql
 CREATE TABLE my_portfolio_project_1_clean LIKE my_portfolio_project_1_staging;
