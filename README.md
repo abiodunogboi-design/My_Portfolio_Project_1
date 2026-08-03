@@ -42,7 +42,7 @@ The project is split into two clear layers:
 ---
 
 ## 💾 Database Architecture & Data Cleaning Pipeline
-The raw dataset was intentionally ingested completely as unstructured `VARCHAR` definitions to prevent data loss or character truncation during early staging. Below is the structured 7-phase pipeline executed inside MySQL to engineer the final analytics-ready layer:
+**The raw dataset was intentionally ingested completely as unstructured `VARCHAR` definitions to prevent data loss or character truncation during early staging**. Below is the structured 7-phase pipeline executed inside MySQL to engineer the final analytics-ready layer:
 
 ### Phase 1 & 2: Environment Setup & Profiling
 Raw ingestion table creation and preliminary field profiling to isolate text anomalies, case styling errors, and formatting inconsistencies:
