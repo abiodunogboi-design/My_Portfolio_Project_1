@@ -4,7 +4,8 @@ An end-to-end data analytics project demonstrating raw data transformation, data
 
 [Interact with the Live Tableau Dashboard Here](https://public.tableau.com/views/Book2_17839386565120/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-<img width="745" height="398" alt="OG enterprise dashboard view" src="https://github.com/user-attachments/assets/a72c7c5c-fcc9-4801-a46c-6edf0a7ea261" />
+<img width="740" height="390" alt="Screenshot 2026-08-03 103717" src="https://github.com/user-attachments/assets/900870b8-6fad-4905-85b9-7ee4886637a2" />
+
 
 
 ## Project Overview
