@@ -85,7 +85,17 @@ ALTER TABLE my_portfolio_project_1_staging MODIFY COLUMN order_date DATE;
 UPDATE my_portfolio_project_1_staging SET revenue = CAST(NULLIF(TRIM(revenue), '') AS DECIMAL(10,2));
 ALTER TABLE my_portfolio_project_1_staging MODIFY revenue DECIMAL(10,2);
 ```
-### Phase 6: Deduplication & Final Schema Commit
+### Phase 6: DATA ENRICHMENT & FEATURE ENGINEERING
+This phase standardizes incomplete data by handling blank fields for sales reps and payment methods to preserve categorical integrity. It also engineers an updated_quantity feature using a reverse-calculated revenue formula to systematically reconstruct and validate order volumes.
+```sql
+UPDATE my_portfolio_project_1_staging
+	SET updated_quantity =  ROUND(revenue/ (unit_price - (unit_price * (discount_pct/100))), 3); 
+
+SELECT DISTINCT(payment_method) FROM my_portfolio_project_1_staging; 
+UPDATE my_portfolio_project_1_staging SET payment_method = 'Unspecified' WHERE payment_method = '';
+
+```
+
 ### Phase 7: Deduplication & Final Schema Commit
 Identified exact-match redundant duplicates through windowed partitioning (`ROW_NUMBER()`), committed clean records into a production-grade destination, and optimized database performance:
 ```sql
